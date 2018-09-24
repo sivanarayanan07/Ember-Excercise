@@ -4,6 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'message-queue-service',
     environment: environment,
+    // contentSecurityPolicy: {
+    //   connect-src:"'self' wss://*.firebase.com"
+    // },
+    // firebase: ""
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
