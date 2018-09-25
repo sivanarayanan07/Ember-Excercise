@@ -1,0 +1,28 @@
+<h2>Exercise 2 - Swapping data </h2>
+<br>
+<div class="row">
+  <div class="col-md-5 col-lg-5 col-sm-4 pane" >
+    <h4>Pane A</h4>
+    <div class="col-md-12 col-lg-12 paneA">
+    {{table-with-checkbox onSelectingItems=(action "updateSelectedItems") list=list.paneA paneName="PaneA"}}
+    </div>
+  </div>
+
+  <div class="col-md-2 col-sm-2 col-lg-2 swap-button-wrapper">
+    <div>
+      <input {{action "moveToLeft" }} class="btn btn-primary swap-button" type="submit" title="Move Left" value="<==" />
+      <input {{action "moveToRight" }} class="btn btn-primary swap-button" type="submit" title="Move Right" value="==>" />
+    </div>
+    <div class="move-all">
+      <input {{action "moveAll" "left"}} class="btn btn-primary swap-button" type="submit" title="Move All to Left" value="<<" />
+      <input {{action "moveAll" "right"}} class="btn btn-primary swap-button" type="submit" title="Move All to Right" value=">>" />
+    </div>
+  </div>
+
+  <div class="col-md-5 col-lg-5 col-sm-4 pane">
+    <h4>Pane B</h4>
+    <div class="col-md-12 col-lg-12 paneB">
+    {{table-with-checkbox onSelectingItems=(action "updateSelectedItems") list=list.paneB paneName="PaneB"}}
+    </div>
+  </div>
+</div>
