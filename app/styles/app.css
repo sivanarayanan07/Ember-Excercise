@@ -1,0 +1,30 @@
+.search-field-wrapper {
+  width:50%;
+  float:left;
+  margin-bottom:10px;
+}
+
+.clear-all-label {
+  float:right;
+  padding-top: 18px;
+  color:#0f75bc;
+  cursor: pointer
+}
+
+.delete-label {
+  color:#0f75bc;
+  cursor: pointer;
+  font-size:13px;
+}
+
+.clear-padding {
+  padding: 0 !important;
+}
+
+.list-group {
+  width: 100%
+}
+
+.list-group-item {
+  border-bottom: 1px solid lightgray;
+}

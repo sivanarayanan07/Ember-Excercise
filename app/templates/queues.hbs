@@ -1,34 +1,36 @@
 <div class="row">
   <div class="col-md-6 col-sm-6 col-lg-6">
-    <div class="" style="margin-top:25px">
-      {{input type="text" placeholder="Title" class="form-control" value=title }}
+    <br>
+    <div>
+      {{input type="text" placeholder="Title" class="form-control" value=title required=true }}
       <br>
       {{textarea class="form-control" placeholder="Content" value=postText cols="80" rows="6"}}
-      <button {{action 'addPost'}}class="btn btn-primary" style="margin-top:15px">Add Post</button>
+      <br>
+      <button {{action 'addPost'}}class="btn btn-primary">Add Post</button>
     </div>
   </div>
 </div>
-
-<div class="row" style="margin-top:15px;">
+<br>
+<div class="row">
   <div class="post-container" class="col-md-6 col-lg-6 col-sm-6">
     <h1>Posts</h1>
-    <div class="col-md-12 col-sm-12 col-lg-12" style="padding:0;">
+    <div class="col-md-12 col-sm-12 col-lg-12 clear-padding">
       {{#if model}}
-        <div  style="width:50%;float:left;margin-bottom:10px;">
+        <div class="search-field-wrapper" >
           {{input type="text" value=searchFor placeholder="Search By Title" class="form-control"}}
         </div>
       {{/if}}
       {{#if model}}
-        <label {{action "clearAll"}} style="float:right;padding-top: 18px;color:#0f75bc;cursor: pointer"> Clear All</label>
+        <label class="clear-all-label" {{action "clearAll"}}> Clear All</label>
       {{/if}}
     </div>
 
-    <ul class="list-group" style="width: 100%">
+    <ul class="list-group">
       {{#each filteredPost as |queue|}}
-        <li class="list-group-item" style="border-bottom: 1px solid lightgray">
+        <li class="list-group-item">
            <h4>{{queue.title}}</h4>
            <p>{{queue.content}}</p>
-           <span {{action "removePost" queue.id}} style="color:#0f75bc;cursor: pointer;font-size:13px;">Delete</span>
+           <span class="delete-label" {{action "removePost" queue.id}}>Delete</span>
         </li>
         {{else}}
           <p>Sorry, No post is here.</p>

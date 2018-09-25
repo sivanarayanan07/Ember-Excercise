@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['searchFor'],
-  title: null,
+  // title: null,
 
-  filteredPost: Ember.computed('searchFor', 'model', function(){
+  filteredPost: Ember.computed('searchFor', function(){
     let searchFor = this.searchFor;
-    let posts = this.model;
+    let posts = this.get('model');
 
     if(searchFor) {
         let searchedPost = posts.filter(function(post) {
@@ -21,11 +21,11 @@ export default Ember.Controller.extend({
 
   actions: {
     addPost: function(){
-      var postText = this.get('postText');
-      var title = this.get('title');
+      var postText = this.get('postText').trim();
+      var title = this.get('title').trim();
 
       if(Ember.isEmpty(title) || Ember.isEmpty(postText)) {
-        alert("Title and Content fields are mandatory!.")
+        alert("Title and Content fields are mandatory!. Space are not valid.");
         return;
       }
 
@@ -43,7 +43,7 @@ export default Ember.Controller.extend({
     removePost: function(id){
       this.store.findRecord('post', id).then(function(post){
         post.destroyRecord();
-      })
+      });
     },
 
     clearAll: function(){
