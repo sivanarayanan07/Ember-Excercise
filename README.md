@@ -1,4 +1,4 @@
-# Message-queue-service
+# Ember-Excercise
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
@@ -16,14 +16,14 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd message-queue-service`
+* `cd ember-excercise`
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:4200/queues](http://localhost:4200/queues).
 
 ### Code Generators
 
