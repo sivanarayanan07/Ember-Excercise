@@ -51,3 +51,8 @@
 .move-all {
   margin-top:5px;
 }
+
+.json-viewer {
+  background-color: black;
+  color:#fff;height:93%
+}

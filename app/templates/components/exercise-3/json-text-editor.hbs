@@ -1,0 +1,14 @@
+<br>
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-sm-6">
+    <h4>Json Editor</h4>
+    {{#if errorMsg}}
+      <div class="alert alert-danger">{{errorMsg}}</div>
+    {{/if}}
+    {{textarea class="form-control" placeholder="Type here" value=jsonText cols="80" rows="20"}}
+  </div>
+  <div class="col-md-6 col-lg-6 col-sm-6">
+    <h4>Json Viewer</h4>
+    <pre class="json-viewer">{{masterObject.updatedJson}}</pre>
+  </div>
+</div>
