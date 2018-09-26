@@ -1,8 +1,4 @@
 import Ember from 'ember';
-const {
-  get,
-  set
-} = Ember;
 
 export default Ember.Service.extend({
   paneData: null,
@@ -18,16 +14,14 @@ export default Ember.Service.extend({
   },
 
   moveToRight: function(items) {
-    var self= this;
     var tempObj = this.get('paneData.paneB');
     items.forEach(function(item){
       if(item.isSelected) {
         Ember.set(item, 'isSelected', false);
-        console.log("in");
       }
 
       tempObj.pushObject(item);
-    })
+    });
 
     this.removeItems(items, "paneA");
   },
@@ -40,13 +34,13 @@ export default Ember.Service.extend({
       }
 
       tempObj.pushObject(item);
-    })
+    });
 
     this.removeItems(items, "paneB");
   },
 
   moveAll: function(to){
-    if(to == 'left') {
+    if(to === 'left') {
       this.moveToLeft(this.get('paneData.paneB'));
     } else {
       this.moveToRight(this.get('paneData.paneA'));
@@ -56,12 +50,12 @@ export default Ember.Service.extend({
   removeItems: function(items, isFrom) {
     let temp = this.get('paneData');
 
-    if(items.length == temp[isFrom].length){
+    if(items.length === temp[isFrom].length){
       Ember.set(temp, isFrom, []);
     } else {
       items.forEach(function(item) {
-        Ember.get(temp, isFrom).removeObject(item)
-      })
+        Ember.get(temp, isFrom).removeObject(item);
+      });
     }
   }
 
