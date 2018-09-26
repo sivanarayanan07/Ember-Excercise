@@ -21,10 +21,10 @@ export default Ember.Controller.extend({
 
   actions: {
     addPost: function(){
-      var postText = this.get('postText').trim();
-      var title = this.get('title').trim();
+      var postText = this.get('postText');
+      var title = this.get('title');
 
-      if(Ember.isEmpty(title) || Ember.isEmpty(postText)) {
+      if(Ember.isBlank(title) || Ember.isBlank(postText)) {
         alert("Title and Content fields are mandatory!. Space are not valid.");
         return;
       }
