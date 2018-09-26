@@ -28,3 +28,26 @@
 .list-group-item {
   border-bottom: 1px solid lightgray;
 }
+
+.swap-button {
+  width: 25%;
+}
+
+.paneA{
+  background-color: aliceblue;
+  height: auto;
+}
+
+.paneB{
+  background-color: #f3eeee;
+  height: auto;
+}
+
+.swap-button-wrapper {
+  margin:auto;
+  text-align:center;
+}
+
+.move-all {
+  margin-top:5px;
+}

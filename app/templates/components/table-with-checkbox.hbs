@@ -1,0 +1,12 @@
+<table class="table table-striped">
+  {{#each list as |row index |}}
+    <tr>
+      <td>{{input type="checkbox" checked=row.isSelected click=(action "onSelectingItems" index paneName)}}</td>
+      <td>{{row.data}}</td>
+    </tr>
+  {{else}}
+    <tr>
+      <td>No Data Available.</td>
+    </tr>
+  {{/each}}
+</table>

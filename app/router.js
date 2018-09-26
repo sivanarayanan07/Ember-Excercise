@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('queues');
+  this.route('execise2');
 });
 
 export default Router;
