@@ -1,0 +1,12 @@
+<br>
+
+<p>Selected Val: <b>{{selectedString}}</b></p>
+
+{{input type="text" placeholder="Type Country Name" class="form-control" key-up="keyup" name="" value=searchString}}
+
+{{#each countrySelect as |value|}}
+
+<div data-select="{{value}}" class="autocomplete-items">
+    <div {{action "selectValue" value}}> <b>{{sub-str value 0 searchString.length}}</b>{{sub-str value searchString.length}}</div>
+</div>
+{{/each}}
