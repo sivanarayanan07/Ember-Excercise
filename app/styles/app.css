@@ -1,4 +1,6 @@
-.search-field-wrapper {
+/* These commented styles were used in exercise 1 and 2 I have commented instead delete.*/
+
+/* .search-field-wrapper {
   width:50%;
   float:left;
   margin-bottom:10px;
@@ -50,7 +52,7 @@
 
 .move-all {
   margin-top:5px;
-}
+} */
 
 .autocomplete-items {
   /* position: absolute; */
