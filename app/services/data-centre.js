@@ -11,7 +11,7 @@ export default Ember.Service.extend({
     let data = [];
     for(let index = 1; index <= 10000; index++)
     {
-      data.pushObject('Row ' + index)
+      data.pushObject('Row ' + index);
     }
 
     return data;
