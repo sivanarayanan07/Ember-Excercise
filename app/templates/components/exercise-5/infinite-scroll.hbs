@@ -1,0 +1,13 @@
+<br>
+<div id="infinite-field" style="height: 250px;width:400px;overflow:auto;background-color: aliceblue">
+  {{#each list as |row|}}
+    <div class="autocomplete-items">
+      <div>{{row}}</div>
+    </div>
+  {{/each}}
+  {{#if isLoading}}
+    <div class="">
+      Loading......
+    </div>
+  {{/if}}
+</div>
