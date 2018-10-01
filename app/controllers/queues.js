@@ -28,9 +28,9 @@ export default Ember.Controller.extend({
         alert("Title and Content fields are mandatory!. Space are not valid.");
         return;
       }
-
+      let id = Math.floor(Math.random() * 1000) + 1;
       var post = this.store.createRecord('post', {
-        id: Math.random(),
+        id: id,
         title: title,
         content: postText
       });
@@ -47,7 +47,14 @@ export default Ember.Controller.extend({
     },
 
     clearAll: function(){
-      this.store.unloadAll();
+      // Firebase does not have a option to remove all records
+      let posts = this.store.peekAll('post');
+      var self = this;
+      posts.forEach(function(item) {
+        self.store.findRecord('post', item.id).then(function(post){
+          post.destroyRecord();
+        });
+      });
     }
 
   }
